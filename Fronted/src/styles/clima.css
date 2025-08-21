@@ -1,0 +1,78 @@
+/* ==================== Body ==================== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ==================== Contenedor ==================== */
+.dashboard {
+  display: flex;
+  flex-direction: column; /* vertical en móviles */
+  align-items: center;
+  gap: 20000000px; /* espacio entre tarjetas */
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* ==================== Tarjetas Base ==================== */
+.clima-card,
+.presion-card,
+.contadorpasos-card {
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover animado */
+.clima-card:hover,
+.presion-card:hover,
+.contadorpasos-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* ==================== Colores por módulo ==================== */
+.clima-card {
+  background-color: #a0d8f1; /* azul cielo */
+  color: #03396c;
+}
+
+.presion-card {
+  background-color: #ffd6a5; /* naranja claro */
+  color: #663c00;
+}
+
+.contadorpasos-card {
+  background-color: #caffbf; /* verde claro */
+  color: #004d00;
+}
+
+/* ==================== Pronóstico por horas ==================== */
+#pronostico-horas span {
+  display: block;
+  margin: 2px 0;
+  font-size: 0.9rem;
+}
+
+/* ==================== Responsive ==================== */
+@media (min-width: 768px) {
+  .dashboard {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .clima-card,
+  .presion-card,
+  .contadorpasos-card {
+    margin-bottom: 0; /* gap ya se maneja con flex */
+  }
+}
