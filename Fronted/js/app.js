@@ -1,3 +1,5 @@
+
+
 // Definir las rutas y su contenido
 const routes = {
   "/": () => `
@@ -40,6 +42,11 @@ const routes = {
       <button type="submit">Iniciar sesión</button>
     </form>
   `,
+  "/dashboard": () => `
+  <h1>Bienvenido al Dashboard</h1>
+  <p>¡Has iniciado sesión correctamente!</p>
+  <button onclick="location.hash = '/'">Cerrar sesión</button>
+`,
 };
 
 // Función para renderizar contenido según ruta
@@ -51,7 +58,10 @@ function router() {
     app.innerHTML = routes[path]();
   } else {
     app.innerHTML = `<h1>404</h1><p>Página no encontrada</p><button onclick="location.hash = '/'">Ir a Inicio</button>`;
+  // Redirige al usuario al dashboard después de un login exitoso
+
   }
+  
 }
 
 // Escuchar cambios en el hash de la URL
@@ -59,3 +69,14 @@ window.addEventListener("hashchange", router);
 
 // Renderizar contenido cuando la página se cargue por primera vez
 window.addEventListener("load", router);
+
+
+
+// Lógica para manejar el login y redirigir al dashboard
+document.addEventListener("submit", async function (e) {
+  if (e.target && e.target.matches("form") && location.hash === "#/login") {
+    e.preventDefault();
+  // Llama a la función de login que valida contra el JSON server
+  
+  }
+});

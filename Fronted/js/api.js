@@ -1,7 +1,6 @@
 const url = "http://localhost:3000/users";
 
 
-
 export const getUsers = async () => {
   try {
     const response = await fetch(url);
@@ -14,4 +13,5 @@ export const getUsers = async () => {
     console.error("There has been a problem with your fetch operation:", error);
     throw error;
   }
+  
 };
