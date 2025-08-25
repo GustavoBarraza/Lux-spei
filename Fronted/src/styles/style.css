@@ -7,7 +7,7 @@
 
 /* Fondo y tipografía general */
 body {
-    background-image: url('./corredor.jpg');
+    background-image: url('../corredor.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
