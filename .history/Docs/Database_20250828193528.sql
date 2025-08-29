@@ -177,4 +177,8 @@ CREATE TABLE comments (
         ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT fk_comments_route FOREIGN KEY (id_route) REFERENCES routes(id_route)
         ON DELETE CASCADE ON UPDATE CASCADE
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> 9a7ccf2f40f4b6000c7b5b62b57abc84ef87a478
