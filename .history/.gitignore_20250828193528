@@ -1,0 +1,8 @@
+node_modules/
+<<<<<<< HEAD
+.env
+README.md
+=======
+
+.env
+>>>>>>> 9a7ccf2f40f4b6000c7b5b62b57abc84ef87a478
