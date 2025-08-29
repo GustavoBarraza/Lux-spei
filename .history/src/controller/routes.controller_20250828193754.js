@@ -1,6 +1,4 @@
-
 import pool from "../config/db.js"
-
 
 // Get all routes
 export const getAllRoutes = async (req, res) => {
@@ -13,27 +11,15 @@ export const getAllRoutes = async (req, res) => {
 };
 
 // Get route by ID with coordinates
-// Get route by ID with coordinates
 export const getRouteById = async (req, res) => {
+  const { id } = req.params;
   try {
-    const routeId = Number(req.params.id);
-
-    if (isNaN(routeId)) {
-      return res.status(400).json({ error: "Invalid route ID" });
-    }
-
-    const [routes] = await pool.query(
-      "SELECT * FROM routes WHERE id_route = ?",
-      [routeId]
-    );
-
-    if (routes.length === 0) {
-      return res.status(404).json({ message: "Route not found" });
-    }
+    const [routes] = await pool.query('SELECT * FROM routes WHERE id_route = ?', [id]);
+    if (routes.length === 0) return res.status(404).json({ message: 'Route not found' });
 
     const [coordinates] = await pool.query(
-      "SELECT latitude, longitude, point_order FROM coordinates WHERE id_route = ? ORDER BY point_order ASC",
-      [routeId]
+      'SELECT latitude, longitude, point_order FROM coordinates WHERE id_route = ? ORDER BY point_order ASC',
+      [id]
     );
 
     res.json({ ...routes[0], coordinates });
@@ -53,8 +39,8 @@ export const createRoute = async (req, res) => {
     const [result] = await connection.query(
       `INSERT INTO routes 
       (name, description, distance, location, id_user)
-      VALUES (?, ?, ?, ?, ?)`,
-      [name, description, distance, location, id_user]
+      VALUES (?, ?, ?, ?, ?, ?)`,
+      [name, description, distance,  location, id_user]
     );
 
     const id_route = result.insertId;
@@ -66,7 +52,7 @@ export const createRoute = async (req, res) => {
         `INSERT INTO coordinates (id_route, latitude, longitude, point_order) VALUES ?`,
         [coordValues]
       );
-    }
+};
 
 
     await connection.commit();
@@ -90,7 +76,7 @@ export const updateRoute = async (req, res) => {
       [name, description, distance, location, id]
     );
 
-    if (result.length === 0) return res.status(404).json({ message: 'Route not found' });
+    if (result.affectedRows === 0) return res.status(404).json({ message: 'Route not found' });
 
     res.json({ message: 'Route updated' });
   } catch (error) {
@@ -105,12 +91,10 @@ export const deleteRoute = async (req, res) => {
   try {
     const [result] = await pool.query('DELETE FROM routes WHERE id_route = ?', [id]);
 
-    if (result.length === 0) return res.status(404).json({ message: 'Route not found' });
+    if (result.affectedRows === 0) return res.status(404).json({ message: 'Route not found' });
 
     res.json({ message: 'Route deleted' });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
-
-

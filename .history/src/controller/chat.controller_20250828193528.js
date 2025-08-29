@@ -1,5 +1,6 @@
 import pool from "../config/db.js";
 
+<<<<<<< HEAD
 //obtenemos todos los chat que esta utilizando el usuario
 
 export const getChats = async (req, res) => {
@@ -26,6 +27,8 @@ export const getChatsById = async (req, res) => {
 
 
 // creamos un chat para que los usuarios se puedan comunicar
+=======
+>>>>>>> 9a7ccf2f40f4b6000c7b5b62b57abc84ef87a478
 export const createChat = async (req , res) => {
     try {
 
@@ -49,6 +52,7 @@ export const createChat = async (req , res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     };
+<<<<<<< HEAD
 };
 
 // Eliminamos un chat por id
@@ -69,3 +73,6 @@ export const deleteChat = async (req, res) => {
     }
 
 }
+=======
+};
+>>>>>>> 9a7ccf2f40f4b6000c7b5b62b57abc84ef87a478

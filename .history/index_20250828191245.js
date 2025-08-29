@@ -16,13 +16,12 @@ app.use(cors());
 
 app.use("/api/auth", authRoutes);
 
-app.use("/api/user", userRoutes);
+app.use("/api/users", userRoutes);
 
 app.use("/api/chats", chatRoutes);
 
 app.use("/api/messages", messageRoutes)
 
-app.use("/api/routes", routes)
 app.use("/api", routes)
 
 app.use("/api/comments", commentsRoutes)
@@ -31,4 +30,3 @@ const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(` API corriendo en http://localhost:${PORT}`);
 });
-

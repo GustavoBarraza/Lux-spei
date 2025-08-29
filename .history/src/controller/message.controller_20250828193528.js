@@ -1,5 +1,6 @@
 import pool from "../config/db.js";
 
+<<<<<<< HEAD
 // get all messages
 export const getMessages = async (req, res) => {
     try {
@@ -48,10 +49,31 @@ export const createMessage = async (req, res) => {
         };
 
         res.json(newMessage[0])
+=======
+export const createMessage = async (req, res) => {
+
+    try {
+        
+        const {id_chat, id_user, content} = req.body;
+
+            const newMessage = await pool.query(
+
+                "INSERT INTO messages (id_chat,id_user,content) VALUES (?,?,?)",
+                [id_chat, id_user, content]
+            );
+
+            if (newMessage.length === 0) {
+                return res.status(404).json({error: "unsend message"})
+            };
+
+            res.json(newMessage[0])
+
+>>>>>>> 9a7ccf2f40f4b6000c7b5b62b57abc84ef87a478
     }
     catch (error) {
         res.status(500).json({ error: error.message });
     };
+<<<<<<< HEAD
 };
 
 // delete a message
@@ -72,4 +94,6 @@ export const deleteMessage = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
+=======
+>>>>>>> 9a7ccf2f40f4b6000c7b5b62b57abc84ef87a478
 };
