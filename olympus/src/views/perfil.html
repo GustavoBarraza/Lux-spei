@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil - Olympus</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f6fa;
+    }
+
+    header {
+      background: #1e3799;
+      padding: 10px 20px;
+    }
+
+    nav a {
+      color: white;
+      margin-right: 15px;
+      text-decoration: none;
+    }
+
+    .perfil-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .perfil-card, .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .foto-container {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .perfil-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 80px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 8px;
+      background: #1e3799;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0c2461;
+    }
+
+    .perfil-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="./dashboard.html">Dashboard</a>
+      <a href="./rutas.html">Rutas</a>
+      <a href="./metas.html">Metas</a>
+      <a href="./chat.html">Chat</a>
+      <a href="./perfil.html">Perfil</a>
+    </nav>
+  </header>
+
+  <main class="perfil-container">
+    <!-- CARD PRINCIPAL -->
+    <div class="perfil-card">
+      <div class="foto-container">
+        <img id="avatarPreview" src="https://via.placeholder.com/120" alt="Avatar" class="perfil-avatar">
+        <input type="file" id="avatarInput" accept="image/*">
+      </div>
+      <h2 id="nombreUsuario">Usuario de Prueba</h2>
+      <p><strong>Email:</strong> usuario@ejemplo.com</p>
+      <p><strong>Rol:</strong> Miembro</p>
+      <div class="perfil-actions">
+        <button id="editar-perfil">Editar perfil</button>
+        <button id="logout">Cerrar sesión</button>
+      </div>
+    </div>
+
+    <!-- CARD LOGROS -->
+    <div class="card">
+      <h3>Logros destacados (este año):</h3>
+      <textarea id="logrosInput" placeholder="Escribe tus logros aquí..."></textarea>
+      <button id="guardarLogros">Guardar</button>
+    </div>
+
+    <!-- CARD METAS -->
+    <div class="card">
+      <h3>Metas del mes:</h3>
+      <textarea id="metasInput" placeholder="Escribe tus metas..."></textarea>
+      <button id="guardarMetas">Guardar</button>
+    </div>
+  </main>
+
+  <script>
+    // =============================
+    // Avatar con localStorage
+    // =============================
+    const avatarInput = document.getElementById("avatarInput");
+    const avatarPreview = document.getElementById("avatarPreview");
+
+    const savedImage = localStorage.getItem("avatarUsuario");
+    if (savedImage) avatarPreview.src = savedImage;
+
+    avatarInput.addEventListener("change", (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          avatarPreview.src = e.target.result;
+          localStorage.setItem("avatarUsuario", e.target.result);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // =============================
+    // Guardar logros y metas
+    // =============================
+    const logrosInput = document.getElementById("logrosInput");
+    const metasInput = document.getElementById("metasInput");
+
+    // Cargar guardado
+    logrosInput.value = localStorage.getItem("logrosGuardados") || "";
+    metasInput.value = localStorage.getItem("metasGuardadas") || "";
+
+    // Guardar al hacer click
+    document.getElementById("guardarLogros").addEventListener("click", () => {
+      localStorage.setItem("logrosGuardados", logrosInput.value);
+      alert("Logros guardados ✅");
+    });
+
+    document.getElementById("guardarMetas").addEventListener("click", () => {
+      localStorage.setItem("metasGuardadas", metasInput.value);
+      alert("Metas guardadas ✅");
+    });
+
+    // =============================
+    // Otros botones
+    // =============================
+    document.getElementById("editar-perfil").addEventListener("click", () => {
+      alert("Funcionalidad de editar perfil aún no implementada");
+    });
+
+    document.getElementById("logout").addEventListener("click", () => {
+      alert("Sesión cerrada");
+      // Aquí podrías limpiar localStorage o redirigir
+    });
+  </script>
+</body>
+</html>

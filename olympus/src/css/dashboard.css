@@ -1,0 +1,262 @@
+/* ============ Reset ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f6f8;
+  color: #222;
+}
+
+/* ============ Layout General ============ */
+.dashboard {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* ============ Navbar ============ */
+.navbar {
+  grid-column: 1 / -1;
+  background: #fff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo a la izquierda */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #1e293b;
+}
+
+.nav-left img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Menú centrado */
+.nav-center {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex: 1; /* para ocupar el espacio central */
+}
+
+.nav-center a {
+  text-decoration: none;
+  color: #1e293b;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-center a:hover {
+  background: #1e293b;
+  color: #fff;
+}
+
+/* Enlace a la derecha */
+.nav-right a {
+  text-decoration: none;
+  color: #ff6f32;
+  font-weight: 700;
+  border: 2px solid #ff6f32;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-right a:hover {
+  background: #ff6f32;
+  color: #fff;
+}
+
+/* ============ Título ============ */
+.titulo {
+  grid-column: 1 / 2;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/* ============ Clima ============ */
+.weather {
+  grid-column: 2 / 3;
+  justify-self: end;
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: right;
+}
+
+.weather .temp {
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.weather .temp i {
+  color: #f9c623;
+  font-size: 2.2rem;
+}
+
+.weather .unit {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.weather .details {
+  font-size: 0.8rem;
+  color: #555;
+  font-weight: 600;
+  margin: 6px 0;
+}
+
+.weather .alert {
+  color: #e5531d;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* ============ Menú Iconos ============ */
+.menu {
+  grid-column: 1 / 2;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  text-align: center;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.menu-item i {
+  font-size: 2rem;
+  color: #ff6f32;
+}
+
+.menu-item a,
+.menu-item p {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  transform: translateY(-3px);
+  color: #e5531d;
+}
+
+/* ============ Últimos Recorridos ============ */
+.recorridos {
+  grid-column: 2 / 3;
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.recorridos h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.recorrido {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.recorrido img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.recorrido strong {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.recorrido p {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.recorrido span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ff6f32;
+}
+
+/* ============ Responsivo ============ */
+@media (max-width: 900px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .weather {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .menu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-center {
+    display: none; /* en pantallas pequeñas se oculta el menú central */
+  }
+}
+
+@media (max-width: 500px) {
+  .menu {
+    grid-template-columns: 1fr;
+  }
+
+  .recorrido img {
+    width: 40px;
+    height: 40px;
+  }
+}

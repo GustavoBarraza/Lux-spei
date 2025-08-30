@@ -1,0 +1,138 @@
+/* ================== Reset ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================== Body ================== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #555; /* Texto general más clarito */
+}
+
+
+/* ================== Login Container ================== */
+.login-container {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Logo circular */
+.login-container .logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  border-radius: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container .logo img {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 100%;
+}
+
+/* Título */
+.login-container h1 {
+  font-size: 1.8rem;
+  color: #ff4d26; /* Naranja fuerte */
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Texto descriptivo */
+.login-container p {
+  font-size: 0.95rem;
+  color: #666; /* Gris más claro */
+  margin-bottom: 20px;
+}
+
+/* ================== Inputs ================== */
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  outline: none;
+  background-color: #f4f4f4;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  color: #555; /* Texto del input más clarito */
+  transition: all 0.3s ease;
+}
+
+.login-container input::placeholder {
+  color: #aaa; /* Placeholder aún más claro */
+}
+
+.login-container input:focus {
+  background-color: #fff;
+  border: 1.5px solid #ff4d26;
+}
+
+/* ================== Botón ================== */
+.login-container button {
+  background-color: #ff4d26;
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: inline-block;
+  margin: 10px auto 0;
+}
+
+.login-container button:hover {
+  background-color: #e63b1b;
+}
+
+/* ================== Enlaces Extras ================== */
+.extra-links {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #888; /* Gris más claro */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.extra-links a {
+  color: #777;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.extra-links a:hover {
+  color: #ff4d26;
+  text-decoration: underline;
+}
+
+/* ================== Responsive ================== */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 25px 20px;
+  }
+
+  .login-container h1 {
+    font-size: 1.5rem;
+  }
+}
