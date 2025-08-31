@@ -1,0 +1,113 @@
+/* ==================== Reset ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==================== Body ==================== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F5F6F8; /* Gris claro (fondo principal) */
+  color: #2B2A36; /* Gris oscuro (texto principal) */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ==================== Navbar ==================== */
+header {
+  background-color: #2B2A36; /* Gris oscuro (barra de navegación) */
+  padding: 15px 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: #F5F6F8; /* Texto claro sobre fondo oscuro */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #FF6F32; /* Naranja (acento) */
+}
+
+/* ==================== Main ==================== */
+#main-content {
+  flex: 1;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #FFFFFF; /* Blanco para el contenedor principal */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra más sutil */
+}
+
+#main-content h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #FF6F32; /* Naranja (acento) */
+  text-align: center;
+}
+
+/* ==================== Formulario ==================== */
+#form-actividad {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #e0e0e0; /* Borde sutil para los campos */
+  border-radius: 8px;
+  background: #F5F6F8; /* Fondo gris claro para los campos */
+  color: #2B2A36; /* Texto oscuro */
+  font-size: 14px;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #666666; /* Gris intermedio */
+}
+
+button {
+  padding: 12px;
+  background-color: #FF6F32; /* Naranja (botón) */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #FFFFFF; /* Texto blanco */
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #E6632D; /* Naranja más oscuro */
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  #main-content {
+    margin: 15px;
+    padding: 15px;
+  }
+}
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

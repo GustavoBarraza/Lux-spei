@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  margin: 0;
+  padding: 0;
+}
+
+.perfil-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  text-align: left;
+  margin-bottom: 20px;
+}
+header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.perfil-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Columna izquierda y derecha: separación entre tarjetas */
+.perfil-info,
+.perfil-extra {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* 👈 espacio uniforme entre tarjetas */
+}
+
+/* Tarjetas */
+.card {
+  background: #f9fafb;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 0.95rem;
+}
+.card h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  color: #333;
+}
+.card ul {
+  padding-left: 18px;
+}
+
+/* Perfil central */
+.perfil-central {
+  text-align: center;
+}
+.foto-container {
+  position: relative;
+}
+.foto-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #ddd;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.foto-container input {
+  display: block;
+  margin: 10px auto;
+}
+.perfil-card {
+  border: 2px solid #c4b5fd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  background: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .perfil-main {
+    grid-template-columns: 1fr;
+  }
+}

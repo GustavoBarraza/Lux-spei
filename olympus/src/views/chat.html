@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/chat.css" />
+  <title>Chat</title>
+</head>
+<body>
+   <!-- HEADER -->
+      <header class="header">
+        <div class="logo">
+          <img src="/Docs/imagenes/Olympus.png" alt="Olympus Logo" />
+          <span>OLYMPUS</span>
+        </div>
+        <!-- NAVBAR -->
+        <nav class="nav">
+          <a href="rutas.html">Rutas</a>
+          <a href="metas.html">Metas</a> <a href="chat.html">Chat</a>
+          <a href="perfil.html">Perfil</a>
+        </nav>
+      </header>
+
+  <!-- Contenido del Chat -->
+  <main>
+    <h1>Chat</h1>
+
+    <!-- Caja de mensajes -->
+    <div id="chat-box">
+      <div class="mensaje">
+        <strong>Ana:</strong> ¡Hola! ¿Listo para entrenar hoy?
+      </div>
+      <div class="mensaje">
+        <strong>Tú:</strong> ¡Claro que sí! 💪
+      </div>
+    </div>
+
+    <!-- Caja de envío -->
+    <form id="form-chat">
+      <input type="text" id="mensaje" placeholder="Escribe un mensaje..." required>
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+</body>
+</html>

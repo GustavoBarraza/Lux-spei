@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olympus Dashboard</title>
+  <link rel="stylesheet" href="/src/css/dashboard.css">
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Contenedor Principal -->
+  <div class="dashboard">
+
+    <!-- HEADER -->
+    <header class="navbar">
+      <nav>
+        <!-- Logo -->
+        <div class="nav-left">
+          <img src="/Docs/imagenes/Olympus.png" alt="Olympus Logo">
+          <span>OLYMPUS</span>
+        </div>
+
+        <!-- Menú -->
+        <div class="nav-center">
+          <a href="../views/rutas.html">Rutas</a>
+          <a href="/src/views/chat.html">Chat</a>
+          <a href="/src/views/perfil.html">Perfil</a>
+          <a href="/src/views/metas.html">Mis metas</a>
+        </div>
+
+        <!-- Extra a la derecha -->
+        <div class="nav-right">
+         <h2 class="titulo">Dashboard</h2>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Título -->
+ 
+
+    <!-- Clima -->
+    <div class="weather">
+      <div class="temp">
+        <i class="fa-solid fa-sun"></i>
+        <span class="number">86</span>
+        <span class="unit">C|F</span>
+      </div>
+      <div class="details">
+        <p>Prob. de precipitaciones: 0%</p>
+        <p>Humedad: 80%</p>
+        <p>Viento: a 10 mph</p>
+        <p class="alert">Calor excesivo</p>
+      </div>
+    </div>
+
+    <!-- Menú de Iconos -->
+    <main class="menu">
+      <div class="menu-item">
+        <i class="fa-solid fa-route"></i>
+        <p>Mis Rutas</p>
+      </div>
+      <div class="menu-item">
+        <i class="fa-solid fa-comments"></i>
+        <p>Chat</p>
+      </div>
+      <div class="menu-item">
+        <i class="fa-solid fa-user"></i>
+        <a href="/src/views/perfil.html">Perfil</a>
+      </div>
+      <div class="menu-item">
+        <i class="fa-solid fa-map"></i>
+        <p>Maps</p>
+      </div>
+    </main>
+
+    <!-- Últimos Recorridos -->
+    <aside class="recorridos">
+      <h2>Últimos Recorridos</h2>
+      <div class="recorrido">
+        <img src="primoz.jpg" alt="Primoz Roglic">
+        <div>
+          <strong>Primoz Roglic</strong>
+          <p>Barranquilla - Cartagena</p>
+          <span>124 KM</span>
+        </div>
+      </div>
+      <div class="recorrido">
+        <img src="jonas.jpg" alt="Jonas Vingegaard">
+        <div>
+          <strong>Jonas Vingegaard</strong>
+          <p>Malecon de Barranquilla</p>
+          <span>124 KM</span>
+        </div>
+      </div>
+      <div class="recorrido">
+        <img src="pogacar.jpg" alt="Tadej Pogacar">
+        <div>
+          <strong>Tadej Pogacar</strong>
+          <p>Jardines de la esperanza - vía 40 - vía la mar</p>
+          <span>13,48 KM</span>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+  <script type="module" src="../js/dashboard.js"></script>
+</body>
+</html>

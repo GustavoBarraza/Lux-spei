@@ -1,0 +1,193 @@
+/* ======== Estilos generales ======== */
+body {
+  font-family: Arial, sans-serif;
+  background: #F5F6F8; /* Gris claro (fondo principal) */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #2B2A36; /* Gris oscuro (texto principal) */
+}
+/* ========== HEADER ========== */
+header {
+  background: #e6e6e6;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  margin: 10px;
+  flex-wrap: wrap; /* Para responsive */
+  gap: 15px;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+header .logo h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* ========== NAVEGACIÓN ========== */
+header nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+header nav a:hover {
+  background: #1e293b;
+  color: #fff;
+}
+span{ color:var(--muted); font-weight:600; }
+/* ======== Contenido principal ======== */
+main {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #FF6F32; /* Naranja (acento) */
+  font-size: 1.8rem;
+}
+
+/* ======== Caja de chat ======== */
+#chat-box {
+  flex: 1;
+  border: 1px solid #e0e0e0; /* Borde sutil */
+  background: #FFFFFF; /* Fondo blanco para el chat */
+  padding: 20px;
+  height: 85vh;
+  width: 90vw;
+  max-width: 1200px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ======== Mensajes estilo burbuja ======== */
+.mensaje {
+  max-width: 75%;
+  padding: 14px 18px;
+  border-radius: 20px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  font-size: 1rem;
+}
+
+.mensaje.otro {
+  background: #F5F6F8; /* Gris claro, como el fondo general */
+  color: #2B2A36; /* Texto oscuro */
+  align-self: flex-start;
+  border-bottom-left-radius: 8px;
+}
+
+.mensaje.tuyo {
+  background: #FF6F32; /* Naranja (acento) */
+  color: #FFFFFF; /* Texto blanco */
+  align-self: flex-end;
+  border-bottom-right-radius: 8px;
+}
+
+/* ======== Formulario de envío ======== */
+#form-chat {
+  display: flex;
+  gap: 12px;
+  width: 90vw;
+  max-width: 1200px;
+}
+
+#form-chat input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 25px;
+  border: 1px solid #e0e0e0;
+  outline: none;
+  background: #FFFFFF; /* Fondo blanco */
+  color: #2B2A36; /* Texto oscuro */
+  font-size: 1rem;
+}
+
+#form-chat button {
+  padding: 14px 20px;
+  background: #FF6F32; /* Naranja (botón) */
+  color: #FFFFFF; /* Texto blanco */
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+#form-chat button:hover {
+  background: #E6632D; /* Naranja más oscuro */
+}
+
+/* ======== Responsividad ======== */
+@media (max-width: 768px) {
+  #chat-box {
+    height: 80vh;
+    width: 95vw;
+  }
+  #form-chat {
+    width: 95vw;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #chat-box {
+    height: 78vh;
+    width: 98vw;
+  }
+  #form-chat {
+    width: 98vw;
+    gap: 8px;
+  }
+  #form-chat input {
+    font-size: 0.9rem;
+  }
+  #form-chat button {
+    font-size: 0.9rem;
+    padding: 12px 16px;
+  }
+}

@@ -1,0 +1,139 @@
+/* ==================== Reset ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==================== Body ==================== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F5F6F8; /* Fondo gris claro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ==================== Contenedor principal ==================== */
+.container {
+  background: #fff;
+  padding: 50px 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 700px;
+  width: 100%;
+}
+
+/* ==================== Logo circular ==================== */
+.logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #000; /* círculo negro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.logo img {
+  width: 70%;
+  height: auto;
+}
+
+/* ==================== Título ==================== */
+.container h1 {
+  color: #FF6F32; /* naranja */
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* ==================== Texto secundario ==================== */
+.container p {
+  color: #2B2A36; /* gris oscuro */
+  font-size: 16px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* ==================== Botones ==================== */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.buttons a {
+  background-color: #FF6F32; /* naranja */
+  color: #fff;
+  padding: 14px 35px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  min-width: 140px;
+  text-align: center;
+}
+
+.buttons a:hover {
+  background-color: #E53935; /* rojo más fuerte al pasar el mouse */
+}
+
+/* ==================== Footer ==================== */
+footer {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #666666; /* gris intermedio */
+  text-align: center;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 20px;
+  }
+
+  .container h1 {
+    font-size: 28px;
+  }
+
+  .container p {
+    font-size: 14px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .buttons a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .container h1 {
+    font-size: 24px;
+  }
+
+  .buttons a {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 11px;
+  }
+}

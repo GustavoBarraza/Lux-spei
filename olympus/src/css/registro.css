@@ -1,0 +1,116 @@
+/* ================== General ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F5F6F8; /* Gris claro (fondo principal) */
+  color: #000000; /* Negro (texto principal) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ================== Registro Container ================== */
+.registro-container {
+  background-color: #FFFFFF; /* Fondo blanco */
+  padding: 40px 30px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.registro-container h1 {
+  color: #FF6F32; /* Naranja (acento/logo OLYMPUS) */
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.registro-container p {
+  color: #666666; /* Gris intermedio (texto secundario) */
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+/* ================== Formulario ================== */
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #2B2A36; /* Gris oscuro (labels) */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #F5F6F8; /* Gris claro (fondo de input) */
+  color: #000000; /* Negro (texto principal) */
+}
+
+.form-group input:focus {
+  border: 2px solid #FF6F32; /* Naranja (acento en foco) */
+  background-color: #FFFFFF;
+}
+
+/* ================== Botón ================== */
+.btn-primary {
+  background-color: #FF6F32; /* Naranja (botón principal) */
+  color: #FFFFFF;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #E53935; /* Rojo (hover para acción fuerte) */
+  transform: scale(1.05);
+}
+
+/* ================== Enlaces Extras ================== */
+.extra-links {
+  margin-top: 20px;
+}
+
+.extra-links a {
+  color: #666666; /* Gris intermedio */
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.extra-links a:hover {
+  color: #FF6F32; /* Naranja en hover */
+  text-decoration: underline;
+}
+
+/* ================== Responsivo ================== */
+@media (max-width: 480px) {
+  .registro-container {
+    padding: 25px 20px;
+  }
+
+  .registro-container h1 {
+    font-size: 1.6rem;
+  }
+}
