@@ -121,111 +121,110 @@ header h2 {
 
 
 
-
-
-/* ====== GRID DE TARJETAS ====== */
-.contenedor{
-  max-width:1200px;
-  margin:0 auto 40px;
-  display:grid;
-  grid-template-columns:repeat(2, minmax(0,1fr));
-  gap:34px;
-  padding:6px;
+/* =======================
+   CONTENEDOR DE GOALS
+======================= */
+.contenedor {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(2fr, 1fr));
+  gap: 2rem;
 }
 
-/* ====== TARJETA ====== */
-.card{
-  background:var(--card);
-  border-radius:var(--radius-lg);
-  box-shadow:var(--shadow);
-  padding:32px 28px;
+/* =======================
+   CARD DE METAS
+======================= */
+/* =======================
+   CONTENEDOR DE GOALS
+======================= */
+#savedGoalsContainer,
+#goalsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  /* espacio entre cards */
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.card h3{
-  font-size:26px;
-  font-weight:800;
-  text-align:center;
-  margin-bottom:14px;
+/* =======================
+   CARD DE METAS
+======================= */
+.card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card p{
-  font-size:16px;
-  color:var(--text);
-  text-align:center;
-  margin-bottom:8px;
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
-.card .progreso{
-  color:var(--muted);
-  font-weight:600;
-  font-size:15px;
+.card h3 {
+  font-size: 1.3rem;
+  color: #2d3436;
+  margin-bottom: 0.6rem;
+  font-weight: 800;
 }
 
-/* ====== BARRA DE PROGRESO ====== */
-.barra{
-  width:280px;
-  height:22px;
-  margin:16px auto;
-  background:#f0f0f0;
-  border-radius:999px;
-  overflow:hidden;
-  position:relative;
-  box-shadow:inset 0 2px 2px rgba(0,0,0,.06);
+.card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 0.3rem 0;
 }
 
-.relleno{
-  height:100%;
-  border-radius:999px;
-  background:linear-gradient(90deg,
-    var(--yellow) 0%,
-    var(--yellow) 70%,
-    var(--orange) 70%,
-    var(--orange) 85%,
-    var(--red) 85%,
-    var(--red) 100%
-  );
-  transition:width .25s ease;
+/* Barra de progreso */
+.barra {
+  margin: 1rem 0;
+  background: #e0e0e0;
+  border-radius: 1rem;
+  height: 12px;
+  overflow: hidden;
 }
 
-.restante{
-  margin-top:8px;
-  font-weight:800;
-  font-size:16px;
-  text-align:center;
+.relleno {
+  background: linear-gradient(90deg, var(--yellow), var(--orange), var(--red));
+  height: 100%;
+  width: 0;
+  border-radius: 1rem;
+  transition: width 0.6s ease-in-out;
 }
 
-.motivacion{
-  margin-top:10px;
-  font-size:14px;
-  color:#444;
-  text-align:left;
-  line-height:1.55;
+/* Estado restante */
+.remaining {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--orange);
+  margin-top: -0.2rem;
 }
 
-/* ====== RESPONSIVE ====== */
-@media (max-width:900px){
-  .header{ margin:16px 14px 22px; padding:16px 20px; }
-  .contenedor{ margin:0 14px 34px; }
-  .header .titulo{ font-size:32px }
-  .header .logo h1{ font-size:28px }
+/* Mensaje motivacional */
+.motivacion {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  background: #f5f7fa;
+  text-align: center;
+  color: #333;
+  border-left: 4px solid var(--yellow);
 }
 
-@media (max-width:760px){
-  .header{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:10px;
+/* Responsive */
+@media (max-width: 760px) {
+
+  #savedGoalsContainer,
+  #goalsContainer {
+    grid-template-columns: 1fr;
   }
-  .header .titulo{ font-size:28px }
-  .header .logo h1{ font-size:26px }
-  .contenedor{ grid-template-columns:1fr; }
-  .barra{ width:240px; height:20px }
-}
-
-@media (max-width:420px){
-  .header .titulo{ font-size:24px }
-  .header .logo h1{ font-size:22px }
-  .barra{ width:200px; height:18px }
-  .card h3{ font-size:20px }
-  .card p{ font-size:14px }
 }

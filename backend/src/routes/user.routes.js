@@ -5,8 +5,9 @@ import { authMiddleware } from "../../middlewares/auth.js";
 
 const router = Router();
 
-router.get("/profile:id", authMiddleware, getProfile);
-router.put("/profile:id", authMiddleware, updateProfile);
-router.delete("/profile:id", authMiddleware, deleteUser);
+// No necesitas :id si usas el token
+router.get("/profile", authMiddleware, getProfile);
+router.put("/profile", authMiddleware, updateProfile);
+router.delete("/profile", authMiddleware, deleteUser);
 
 export default router;

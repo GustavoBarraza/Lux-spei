@@ -7,6 +7,7 @@ import chatRoutes from "./src/routes/chat.routes.js";
 import messageRoutes from "./src/routes/messages.routes.js";
 import routes from "./src/routes/route.routes.js"
 import commentsRoutes from "./src/routes/comments.routes.js";
+import goals from "./src/routes/goals.routes.js";
 import cors from "cors";
 dotenv.config();
 
@@ -24,8 +25,9 @@ app.use("/api/messages", messageRoutes)
 
 app.use("/api/", routes)
 
-
 app.use("/api/comments", commentsRoutes)
+
+app.use("/api", goals)
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

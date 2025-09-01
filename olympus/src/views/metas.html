@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Olympus - Mis Metas</title>
-  <link rel="stylesheet" href="/src/css/metas.css">
+  <title>Olympus - My Goals</title>
+  <link rel="stylesheet" href="../css/metas.css">
 </head>
 <body>
   <!-- HEADER -->
@@ -12,73 +12,33 @@
     <nav>
       <!-- Logo -->
       <div class="nav-left">
-        <img src="/Docs/imagenes/Olympus.png" alt="Logo Olympus">
+        <img src="/Docs/imagenes/Olympus.png" alt="Olympus Logo">
         <h1>OLYMPUS</h1>
       </div>
 
-      <!-- Menú -->
+      <!-- Menu -->
       <div class="nav-center">
-        <a href="/src/views/dashboard.html">Dashboard</a>
-        <a href="/src/views/chat.html">Chat</a>
-        <a href="/src/views/perfil.html">Perfil</a>
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./chat.html">Chat</a>
+        <a href="./perfil.html">Profile</a>
       </div>
 
-      <!-- Extra a la derecha -->
+      <!-- Right side -->
       <div class="nav-right">
-        <a href="/src/views/rutas.html">Rutas</a>
+        <a href="./rutas.html">Routes</a>
       </div>
     </nav>
-       <h2 class="titulo">Mis Metas</h2>
+    <h2 class="title">My Goals</h2>
   </header>
 
-
-  <!-- CONTENIDO PRINCIPAL -->
+  <!-- MAIN CONTENT -->
   <main class="contenedor">
-    <!-- Meta semanal -->
-    <div class="card">
-      <h3>Meta semanal</h3>
-      <p>Completar 100 km en bicicleta</p>
-      <p class="progreso">Progreso: 76 km / 100 km</p>
-      <div class="barra">
-        <div class="relleno" style="width: 76%;"></div>
-      </div>
-      <p class="restante">Restan: 24 km</p>
-    </div>
 
-    <!-- Meta de comunidad -->
-    <div class="card">
-      <h3>Meta de comunidad</h3>
-      <p>Rodar al menos 3 veces con amigos esta semana</p>
-      <p class="progreso">Progreso: 2/3 actividades grupales</p>
-      <div class="barra">
-        <div class="relleno" style="width: 66%;"></div>
-      </div>
-      <p class="restante">Restan: 1</p>
-    </div>
-
-    <!-- Everest Challenge -->
-    <div class="card">
-      <h3>Reto: “Everest Challenge”</h3>
-      <p>Acumula 8.849 m de desnivel en 30 días</p>
-      <p class="progreso">Progreso: 6.200 m / 8.849 m</p>
-      <div class="barra">
-        <div class="relleno" style="width: 70%;"></div>
-      </div>
-      <p class="restante"><strong>Avance: 70%</strong></p>
-    </div>
-
-    <!-- Meta de exploración -->
-    <div class="card">
-      <h3>Meta de Exploración</h3>
-      <p class="progreso">Progreso: 3 / 5 rutas</p>
-      <p class="restante">Restan: 2 rutas por explorar</p>
-      <div class="barra">
-        <div class="relleno" style="width: 60%;"></div>
-      </div>
-      <p class="motivacion">
-        Motivación: “Atrévete a salir de la rutina, cada ruta nueva suma experiencia y puntos de explorador.”
-      </p>
-    </div>
+    <!-- SAVED GOALS FROM PROFILE -->
+    <h2>Saved Goals from Profile</h2>
+    <div id="savedGoalsContainer"></div>
   </main>
+
+  <script type="module" src="../js/goals.js"></script>
 </body>
 </html>
