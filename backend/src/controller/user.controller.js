@@ -12,7 +12,7 @@ export const getProfile = async (req, res) => {
       [id_user]
     );
 
-    if (rows.affectedRows === 0) {
+    if (rows.length === 0) {
       return res.status(404).json({ error: "User not found" });
     }
 

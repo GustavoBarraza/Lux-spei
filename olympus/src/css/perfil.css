@@ -1,89 +1,370 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f3f4f6;
+/* =========================
+   RESET Y BOX-SIZING
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.perfil-container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
+/* =========================
+   BODY
+========================= */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f6fa;
+  color: #2c3e50;
 }
 
-header {
-  text-align: left;
-  margin-bottom: 20px;
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e3799;
+  padding: 10px 30px;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
-header h1 {
-  font-size: 2rem;
-  font-weight: bold;
+
+/* Logo y nombre de la marca */
+.nav-left {
   display: flex;
   align-items: center;
+  gap: 10px;
+  /* espacio entre logo y texto */
 }
 
-.perfil-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-  align-items: start;
-}
-
-/* Columna izquierda y derecha: separación entre tarjetas */
-.perfil-info,
-.perfil-extra {
+.nav-left .logo-container {
+  width: 70px;
+  /* círculo más grande */
+  height: 70px;
+  border-radius: 100%;
+  background-color: white;
   display: flex;
-  flex-direction: column;
-  gap: 20px; /* 👈 espacio uniforme entre tarjetas */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Tarjetas */
-.card {
-  background: #f9fafb;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  font-size: 0.95rem;
-}
-.card h3 {
-  margin-top: 0;
-  font-size: 1rem;
-  color: #333;
-}
-.card ul {
-  padding-left: 18px;
+.nav-left .logo-container img {
+  width: 120px;
+  /* imagen dentro del círculo */
+  height: 120px;
+  object-fit: contain;
 }
 
-/* Perfil central */
-.perfil-central {
-  text-align: center;
+.nav-left .brand-name {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
-.foto-container {
-  position: relative;
+
+/* Menú central */
+.nav-center a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
 }
-.foto-container img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 3px solid #ddd;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-.foto-container input {
-  display: block;
-  margin: 10px auto;
-}
-.perfil-card {
-  border: 2px solid #c4b5fd;
-  border-radius: 8px;
-  padding: 10px;
-  margin-top: 10px;
-  background: #fff;
+
+.nav-center a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive */
-@media (max-width: 900px) {
-  .perfil-main {
-    grid-template-columns: 1fr;
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .nav-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-center a {
+    margin: 5px 10px;
+  }
+}
+.perfil-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+/* =========================
+   CARDS
+========================= */
+.perfil-card,
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.perfil-card:hover,
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+/* =========================
+   FOTO DE PERFIL
+========================= */
+.foto-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.perfil-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* =========================
+   FORMULARIO DE METAS
+========================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+form label {
+  font-weight: 500;
+  color: #34495e;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="date"],
+form input[type="password"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.3);
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* =========================
+   BOTONES
+========================= */
+form button,
+.perfil-actions button {
+  display: inline-block;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+form button:hover,
+.perfil-actions button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   ACCIONES DE PERFIL
+========================= */
+.perfil-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* =========================
+   MODAL
+========================= */
+/* Overlay del modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* ligeramente más oscuro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+/* Oculto por defecto */
+.modal.hidden {
+  display: none;
+  opacity: 0;
+}
+
+/* Contenido del modal */
+.modal-content {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px 25px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* Animación al abrir modal */
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Título */
+.modal-content h3 {
+  margin: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #1e3799;
+}
+
+/* Inputs */
+.modal-content label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  color: #34495e;
+  font-weight: 500;
+  gap: 5px;
+}
+
+.modal-content input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-content input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.3);
+  outline: none;
+}
+
+/* Botones */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#guardarCambios {
+  background-color: #3498db;
+  color: white;
+}
+
+#guardarCambios:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+#cancelarEdicion {
+  background-color: #e0e0e0;
+  color: #2c3e50;
+}
+
+#cancelarEdicion:hover {
+  background-color: #d0d0d0;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .modal-content input {
+    font-size: 0.95rem;
+  }
+
+  .modal-actions button {
+    flex: 1;
+    /* botones ocupan todo el ancho en móvil */
   }
 }
