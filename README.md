@@ -1,108 +1,103 @@
 Olympus
 
-Bienvenido a OLYMPUS, un proyecto que fusiona tecnología, comunidad y superación personal en una plataforma web full-stack.
-Aquí, cada meta alcanzada y cada ruta recorrida iluminan el camino hacia un mundo mejor.
+Welcome to OLYMPUS, a project that merges technology, community, and personal growth into a full-stack web platform. Here, every goal achieved and every path taken lights the way to a better world.
 
-Descripción
+Description
 
-Olympus es una aplicación web que combina lo mejor del backend en Node.js con un frontend ligero en HTML, CSS y JS vanilla, diseñada para ofrecer una experiencia intuitiva y potente.
+Olympus is a web application that combines the best of a Node.js backend with a lightweight frontend built in HTML, CSS, and vanilla JS, designed to deliver an intuitive and powerful experience.
 
-El módulo Olympus funciona como la cima de la experiencia: un lugar donde los usuarios pueden registrarse, definir metas, trazar rutas, chatear y compartir logros.
+The Olympus module stands as the peak of the experience: a place where users can sign up, set goals, map routes, chat, and share achievements.
 
-Es más que código.
-Es una tierra donde la motivación y la comunidad se encuentran.
+It’s more than just code.
+It’s a land where motivation and community come together. 🌍⚡
 
-Características principales
-Autenticación con JWT – Seguridad en cada paso.
+Key Features
+ JWT Authentication – Security at every step.
 
-Gestión de rutas – Explora y crea caminos personalizados.
+ Route management – Explore and create personalized paths.
 
-Metas y logros – Define objetivos y mide tu progreso.
+ Goals and achievements – Set objectives and track your progress.
 
-Chat en tiempo real – Conecta con la comunidad.
+ Real-time chat – Connect with the community.
 
-Perfil de usuario – Personaliza tu experiencia.
+ User profile – Customize your experience.
 
-Base de datos estructurada – SQL optimizado para escalabilidad.
+ Structured database – SQL optimized for scalability.
 
-Tecnologías utilizadas
-
+Technologies Used
 Backend (Lux Spei)
 
 Node.js + Express.js
 
-JWT para autenticación
+JWT for authentication
 
-Base de datos SQL
+SQL database
 
-Controladores RESTful
+RESTful controllers
 
 Frontend (Olympus)
 
-HTML5, CSS3 y JavaScript vanilla
+HTML5, CSS3, and vanilla JavaScript
 
-Vistas dinámicas (login, registro, dashboard, perfil, metas, rutas, chat)
+Dynamic views (login, signup, dashboard, profile, goals, routes, chat)
 
-Estilos personalizados con un diseño limpio y moderno
+Custom styles with a clean, modern design
 
-structura del proyecto
-
+ Project Structure
 Lux-spei-main/
 │
-├── backend/               # Servidor con Node.js + Express
-│   ├── src/controller     # Controladores de la lógica
-│   ├── src/routes         # Endpoints API REST
-│   ├── src/config         # Configuración de la DB
-│   ├── utils              # Utilidades (JWT, middlewares)
-│   └── Docs/Database.sql  # Modelo de base de datos
+├── backend/               # Node.js + Express server
+│   ├── src/controller     # Logic controllers
+│   ├── src/routes         # API REST endpoints
+│   ├── src/config         # Database configuration
+│   ├── utils              # Utilities (JWT, middlewares)
+│   └── Docs/Database.sql  # Database schema
 │
 ├── olympus/               # Frontend
-│   ├── src/views          # Vistas HTML
-│   ├── src/css            # Estilos CSS
-│   ├── src/js             # Scripts de interacción
-│   └── Docs/imagenes      # Recursos gráficos
+│   ├── src/views          # HTML views
+│   ├── src/css            # CSS styles
+│   ├── src/js             # Interaction scripts
+│   └── Docs/imagenes      # Graphic resources
 │
-└── README.md              # Este archivo
+└── README.md              # This file
 
-Instalación y uso
-
-1. Clonar el repositorio
-
+⚡ Installation & Usage
+1. Clone the repository
 git clone https://github.com/usuario/Lux-spei.git
 cd Lux-spei-main
 
-2. Configurar el backend
+2. Configure the backend
 cd backend
 npm install
 
 
-Configura tu archivo .env con:
+Set up your .env file with:
 
 PORT=4000
 DB_HOST=localhost
-DB_USER=tu_usuario
-DB_PASS=tu_password
+DB_USER=your_user
+DB_PASS=your_password
 DB_NAME=luxspei
-JWT_SECRET=tu_secreto
+JWT_SECRET=your_secret
 
 
-Luego inicia el servidor:
+Then start the server:
 
 npm start
 
-3. Configurar el frontend
+3. Configure the frontend
 cd ../olympus
-npm install   # (si aplica)
+npm install   # (if applicable)
 
 
-Abre index.html en tu navegador para iniciar la experiencia.
+Open index.html in your browser to start the experience. 
 
-Contribuciones
+ Contributions
 
-¡Las contribuciones son bienvenidas!
-Puedes abrir un issue o enviar un pull request para mejorar este mundo.
+Contributions are welcome!
+You can open an issue or submit a pull request to help improve this project.
 
-Licencia
+License
 
-Este proyecto está bajo la licencia MIT.
-Eres libre de usarlo, modificarlo y expandirlo.
+This project is under the MIT License.
+You are free to use, modify, and expand it.
