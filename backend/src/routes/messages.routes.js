@@ -1,11 +1,10 @@
 import { Router } from "express";
-import { getMessages,getMessagesById,createMessage,deleteMessage } from "../controller/message.controller.js";
+import { getMessagesByChat, createMessage } from "../controller/message.controller.js";
+import { authMiddleware } from "../../middlewares/auth.js";
 
 const router = Router();
 
-router.get("/get",getMessages);
-router.get("/get/:id",getMessagesById);
-router.post("/post", createMessage);
-router.delete("/delete/:id",deleteMessage)
+router.get("/:id_chat", authMiddleware, getMessagesByChat);
+router.post("/", authMiddleware, createMessage);
 
 export default router;

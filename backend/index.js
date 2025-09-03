@@ -3,7 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 import authRoutes from "./src/routes/auth.routes.js";
 import userRoutes from "./src/routes/user.routes.js";
-import chatRoutes from "./src/routes/chat.routes.js";
+import chat from "./src/routes/chat.routes.js";
 import messageRoutes from "./src/routes/messages.routes.js";
 import routes from "./src/routes/route.routes.js"
 import commentsRoutes from "./src/routes/comments.routes.js";
@@ -19,7 +19,7 @@ app.use("/api/auth", authRoutes);
 
 app.use("/api/user", userRoutes);
 
-app.use("/api/chats", chatRoutes);
+app.use("/api/chats", chat);
 
 app.use("/api/messages", messageRoutes)
 

@@ -260,3 +260,52 @@ body {
     height: 40px;
   }
 }
+
+/* Necesario para posicionar el drop-down */
+.navbar nav {
+  position: relative;
+}
+
+/* Botón hamburguesa oculto en escritorio */
+.hamburger {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+/* Responsive: menú hamburguesa y drop-down */
+@media (max-width: 900px) {
+  .navbar nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: 8px;
+  }
+
+  /* Oculto por defecto en móvil */
+  .nav-center {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background: #fff;
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+
+  /* Estado abierto */
+  .navbar .nav-center.show {
+    display: flex;
+  }
+}
